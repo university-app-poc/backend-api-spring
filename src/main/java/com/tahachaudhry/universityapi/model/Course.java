@@ -18,6 +18,9 @@ import org.hibernate.annotations.OnDeleteAction;
 public class Course {
     private @Id @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "course_generator") Long id;
     private String name;
+	private String duration;
+	private String description;
+	private String entryRequirements;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name="university_id", nullable=false)
@@ -56,10 +59,34 @@ public class Course {
 	public void setUniversity(University university) {
 		this.university = university;
 	}
-    
-    @Override
-	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", university=" + university
-				+ "]";
+
+	public String getDuration() {
+		return this.duration;
 	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getEntryRequirements() {
+		return this.entryRequirements;
+	}
+
+	public void setEntryRequirements(String entryRequirements) {
+		this.entryRequirements = entryRequirements;
+	}
+    
+    // @Override
+	// public String toString() {
+	// 	return "Course [id=" + id + ", name=" + name + ", university=" + university
+	// 			+ "]";
+	// }
 }

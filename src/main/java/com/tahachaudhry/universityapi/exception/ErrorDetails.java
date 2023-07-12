@@ -3,21 +3,21 @@ package com.tahachaudhry.universityapi.exception;
 import java.util.Date;
 
 public class ErrorDetails {
-	private Date timestamp;
+	private int errorCode;
 	private String message;
 	private String details;
 
-	public ErrorDetails(Date timestamp, String message, String details) {
+	public ErrorDetails(int errorCode, String message, String details) {
 		super();
-		this.timestamp = timestamp;
+		this.errorCode = errorCode;
 		this.message = message;
 		this.details = details;
 	}
 
-	public Date getTimestamp() {
-		return timestamp;
+	public int getCode() {
+		return errorCode;
 	}
-
+	
 	public String getMessage() {
 		return message;
 	}

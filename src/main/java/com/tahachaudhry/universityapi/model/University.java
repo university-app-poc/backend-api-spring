@@ -1,6 +1,7 @@
 package com.tahachaudhry.universityapi.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,8 @@ public class University {
 	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "university_generator") Long id;
     private String name;
     private String address;
+	@Embedded
+	private Contact contact;
 
 	public University() {
 
@@ -46,10 +49,18 @@ public class University {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-    
-    @Override
-	public String toString() {
-		return "University [id=" + id + ", name=" + name + ", address=" + address
-				+ "]";
+
+	public Contact getContact() {
+		return this.contact;
 	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+    
+    // @Override
+	// public String toString() {
+	// 	return "University [id=" + id + ", name=" + name + ", address=" + address
+	// 			+ "]";
+	// }
 }
