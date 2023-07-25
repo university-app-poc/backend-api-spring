@@ -83,10 +83,4 @@ public class Course {
 	public void setEntryRequirements(String entryRequirements) {
 		this.entryRequirements = entryRequirements;
 	}
-    
-    // @Override
-	// public String toString() {
-	// 	return "Course [id=" + id + ", name=" + name + ", university=" + university
-	// 			+ "]";
-	// }
 }
